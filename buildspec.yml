@@ -24,7 +24,8 @@ phases:
       - echo before test cases included with test coverage
       - npm run test:cover    
       - echo coverage starting here
-      - sonar-scanner -Dsonar.organization=rohkhith  -Dsonar.projectKey=vuupocsonaranalyze -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=7d20972148a1fb6152cb503e06d33a426b430dc3 -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+      - sonar-scanner -Dsonar.projectKey=vuupocsonaranalyze -Dsonar.sources=. -Dsonar.host.url=http://34.75.171.163:9000 -Dsonar.login=aa890a4be895cb6d43a04a66873675c2107bd296 -Dsonar.test.inclusions=**/__tests__/** -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+      #- sonar-scanner -Dsonar.organization=rohkhith  -Dsonar.projectKey=vuupocsonaranalyze -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=7d20972148a1fb6152cb503e06d33a426b430dc3 -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
       - sleep 5
       # - aws s3 cp --recursive  coverage/ "s3://sonarcoverage"
       - curl https://sonarcloud.io/api/qualitygates/project_status?projectKey=vuupocsonaranalyze>result.json
